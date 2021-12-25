@@ -1,0 +1,97 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  height: 100vh;
+
+}
+
+.wrapper {
+  min-height: 100%;
+  padding: 15px 55px;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  
+}
+.bg {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  /* height: 300%; */
+  height: 100%;
+  background: rgb(5,5,5);
+  /* background: linear-gradient(180deg, rgba(5,5,5,1) 0%, rgba(255,255,255,1) 100%); */
+  /* opacity: .7; */
+  /* z-index: 10; */
+  animation-name: bacg;
+  animation-duration: 4s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+@keyframes bacg {
+  0%{
+    /* bottom: 0; */
+    opacity: 0.8;
+  }
+  25%{
+    opacity: 0.3;
+  }
+  50%{
+    opacity: 0;
+  }
+  75%{
+    opacity: 0.3;
+  }
+  100% {
+    /* bottom: -200%; */
+    opacity: 0.8;
+  }
+}
+.wrapper_suny {
+  position: absolute;
+  height: 60px;
+  left: 50%;
+  right: 50%;
+  margin-left: -400px;
+  bottom: 15px;
+  /* transform: rotate(225deg); */
+  animation-name: radius;
+  animation-duration: 4s;
+  transition-delay: 2s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  /* transform-origin: 50% 50%; */
+  width: 800px;
+}
+.wrapper_suny::after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50px;
+  height: 50px;
+  background: url(asset/640crescentmoon_100402.png) center center / cover no-repeat;
+}
+@keyframes radius {
+  0%{
+    transform: rotate(0deg);
+  }
+  100%{
+    transform: rotate(360deg);
+  }
+}
+.suny {
+  z-index: 10;
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background: url(asset/1075154.svg) center center / cover no-repeat;
+}
